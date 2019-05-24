@@ -17,4 +17,6 @@
     
     define('LOGS', ROOT.'/logs/');
 
+    define('DB', ROOT.'/db/');
+
     
