@@ -7,7 +7,7 @@ require_once VIEWS.'partials/_navigation.php';
 		<span style="font-size: 48px; color: Dodgerblue;">
 			<i class="fas fa-igloo"></i>
 		</span>
-		<h1>Hello PHP!</h1>
+		<h1><?php echo $title;?></h1>
     </header>
     <?php
 require_once VIEWS.'partials/_aside.php';?>

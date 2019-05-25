@@ -1,0 +1,84 @@
+.feedback * {
+    margin: 0;
+    padding: 0;
+}
+.wrap {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.feedback h1 {
+    text-align: center;
+}
+
+.feedback .row {
+    position: relative;
+    margin-top: 25px;
+}
+
+.feedback .row input,
+.feedback .row textarea {
+    width: 25em;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #57a;
+    border-radius: 3px;
+    font-family: inherit;
+    color: inherit;
+    font-size: 15px;
+}
+
+.feedback .button {
+    text-align: center;
+}
+
+.feedback .button button {
+    width: 25em;
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #57a;
+    border-radius: 3px;
+    font-family: inherit;
+    color: inherit;
+    font-size: 15px;
+    transition: all 0.4s linear;
+}
+
+.feedback .button button:hover {
+    background: #57a;
+    color: #ccc;
+}
+
+.feedback .label {
+    position: absolute;
+    top: 11px;
+    left: 11px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #888;
+    cursor: text;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.feedback .row_input:focus {
+    box-shadow: inset 0 0 5px #57a;
+}
+
+.feedback .row_input:focus~.label,
+.feedback .row_input:valid~.label {
+    top: -18px;
+    left: 0;
+    font-size: 16px;
+    color: #57a;
+}
+
+.feedback .row_input:focus~.feedback .label:first-letter,
+.feedback .row_input:valid~.feedback .label:first-letter {
+    text-transform: uppercase;
+}

@@ -1,22 +1,15 @@
 <?php
-
-    // define('ROOT', realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR));
-
-    define('ROOT', dirname(__DIR__));
-    const APP = ROOT.'/App';
-    const CORE = ROOT.'/Core/';
-
+  
+    define('ROOT', realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR));
     const VIEWS = ROOT.'/App/Views/';
     const CONTROLLERS = ROOT.'/App/Controllers/';
     const MODELS = ROOT.'/App/Models/';
     const CONFIG = ROOT.'/config/';
+    
+    const CORE = ROOT.DIRECTORY_SEPARATOR.'Core'.DIRECTORY_SEPARATOR;
 
     const EXT = '.php';
     const APPNAME = 'Great Shopaholic';
     const SLOGAN = 'Lets Build Cool Site';
-    
-    define('LOGS', ROOT.'/logs/');
 
     define('DB', ROOT.'/db/');
-
-    
