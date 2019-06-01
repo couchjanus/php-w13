@@ -14,8 +14,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = new Category();
-        $categories = $categories->index();
+        // $categories = new Category();
+        // $categories = $categories->index();
+        $categories = Category::index();
         $data['categories'] = $categories;
         $data['title'] = 'Category List Page ';
         $data['numRows'] = count($categories);
@@ -32,8 +33,9 @@ class CategoryController extends Controller
             $opts = [];
             array_push($opts, trim(strip_tags($_POST['name'])));
             array_push($opts, $_POST['status']);
-            $category = new Category();
-            $category->store($opts);
+            // $category = new Category();
+            // $category->store($opts);
+            Category::store($opts);
             Helper::redirect('/admin/categories');
         }
 
