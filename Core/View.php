@@ -28,11 +28,5 @@ class View {
 
     public function render($path, $data = [], $error = false) {
         return $this->getHeader($path).$this->renderContent($path, $data, $error).$this->getFooter($path);
-    } 
-
-    // public function render($path, $data = [], $error = false)
-    // {
-    //     extract($data);
-    //     return require VIEWS."/{$path}.php";
-    // }
+    }
 }

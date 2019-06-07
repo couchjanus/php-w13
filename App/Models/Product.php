@@ -53,26 +53,34 @@ class Product
      * @param $options - характеристики товара
      * @return int|string
      */
+        /**
+     * Добавление продукта
+     *
+     * @param $options - характеристики товара
+     * @return int|string
+     */
     public static function store($options)
     {
         $sql = "INSERT INTO products(
-                name,category_id, price, brand,
+                name, slug, category_id, price, brand,
                 description, is_new, status)
-                VALUES (:name, :category_id, :price,
+                VALUES (:name, :slug, :category_id, :price,
                 :brand, :description, :is_new, :status)";
         
         $stmt = Connection::prepare($sql);
-
-        $stmt->bindParam(':name', $options['name'], PDO::PARAM_STR);
         
-        $stmt->bindParam(':category_id', $options['category'], PDO::PARAM_INT);
+        $stmt->bindParam(':name', $options['name'], PDO::PARAM_STR);
+  
+        $slug = Slug::makeSlug($options['name'], array('transliterate' => true));
+        $stmt->bindParam(':slug', $slug, PDO::PARAM_STR);
+  
+        $stmt->bindParam(':category_id', $options['category_id'], PDO::PARAM_INT);
         $stmt->bindParam(':price', $options['price'], PDO::PARAM_INT);
         $stmt->bindParam(':brand', $options['brand'], PDO::PARAM_STR);
         $stmt->bindParam(':description', $options['description'], PDO::PARAM_STR);
         $stmt->bindParam(':is_new', $options['is_new'], PDO::PARAM_INT);
         $stmt->bindParam(':status', $options['status'], PDO::PARAM_INT);
         $stmt->execute();
-        
     }
 
     public static function lastId() 
@@ -98,6 +106,14 @@ class Product
         // Возвращаем значение count - количество
         $row = $stmt->fetch();
         return $row['count'];
+    }
+
+    public static function getBySlug($id)
+    {
+        $stmt = Connection::prepare("SELECT t1.*, t2.filename as picture, t2.resource_id  as resource_id FROM products t1 JOIN pictures t2 ON t2.resource = 'products' AND t1.id = t2.resource_id WHERE t1.id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_BOTH);
     }
    
 }
