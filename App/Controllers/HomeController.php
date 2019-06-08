@@ -1,14 +1,26 @@
 <?php
 // HomeController.php
+require_once MODELS.'Product.php';
 
 class HomeController extends Controller
 {
-    // Class properties and methods go here   
     public function index()
     {
         $title = 'Our <b>Best Cat Members Home Page </b>';
-        // render('pages/index', ['title'=>$title]);
         $this->_view->render('pages/index', ['title'=>$title]);
     }
-}
 
+    public function getProducts()
+    {
+        $products = Product::getProducts();
+        echo json_encode($products);
+        
+    }
+    public function getProduct($vars)
+    {
+        extract($vars);
+        $product = Product::getProduct($id);
+        echo json_encode($product);
+        
+    }
+}

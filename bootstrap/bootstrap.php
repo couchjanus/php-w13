@@ -21,6 +21,7 @@ require_once CORE.'View.php';
 require_once CORE.'Controller.php';
 require_once CORE.'Request.php';
 require_once CORE.'Slug.php';
+
 require_once CORE.'Router.php';
 
 define('ROUTES', require CONFIG.'routes'.EXT);

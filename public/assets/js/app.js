@@ -3,7 +3,7 @@
 function makeProductItem($template, product) {
     $template.querySelector('.product-wrapper').setAttribute('productId', product.id);
     $template.querySelector('.product-name').textContent = product.name;
-    $template.querySelector('img').setAttribute('src', "images/"+ product.picture);
+    $template.querySelector('img').setAttribute('src', "images/products/"+ product.picture);
     $template.querySelector('img').setAttribute('alt', product.name);
     $template.querySelector('.product-price').textContent = '$'+product.price;
     return $template;
@@ -31,7 +31,9 @@ function _translate(img, offset=0){
     return elements.join('');
 }
 
-const url = 'https://api.myjson.com/bins/wzxxy';
+// const url = 'https://api.myjson.com/bins/wzxxy';
+
+const url = '/api/shop';
 // ------------------APP-------------------------
 (function() {
     el('#cart-toggle').addEventListener('click', function(e) {

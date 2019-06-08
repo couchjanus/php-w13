@@ -6,6 +6,8 @@ return [
    'blog' => 'BlogController@index',
    'guest' => 'GuestbookController@index',
    '404' => 'PagesController@notFound',
+   'api/shop'=> 'HomeController@getProducts',
+   'product-detail/{id}'=> 'HomeController@getProduct',
 
    'admin' => 'Admin\DashboardController@index',
    'admin/categories' => 'Admin\CategoryController@index',
