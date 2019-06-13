@@ -151,6 +151,7 @@ class Uploader {
 
 		// set & create destination path
 		if (!$this->set_destination($destination)) {
+			// Исключение можно сгенерировать (выбросить) при помощи оператора throw, и можно перехватить (поймать) оператором catch. Код генерирующий исключение, должен быть окружен блоком try, для того, чтобы можно было перехватить исключение. Каждый блок try должен иметь как минимум один соответствующий ему блок catch или finally.
 
 			throw new Exception('Uploader: Can\'t create destination. '.$this->root . $this->destination);
 
