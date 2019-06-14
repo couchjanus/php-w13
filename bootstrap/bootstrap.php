@@ -13,6 +13,8 @@ error_reporting(E_ALL | E_NOTICE | E_STRICT | E_DEPRECATED);
 
 
 require_once realpath(__DIR__).'/../config/app.php';
+require_once CORE.'Session.php';
+Session::init();
 require_once CORE.'Connection.php';
 Connection::connect(require_once DB_CONFIG_FILE);
 

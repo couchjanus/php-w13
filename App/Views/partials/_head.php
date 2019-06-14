@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Shopping cart</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/feedback.css">
-</head>
-
-<body>
+<?php
+require_once VIEWS.'partials/_meta.php';
+require_once VIEWS.'partials/_styles.php';
+require_once VIEWS.'partials/_navigation.php';
+require_once VIEWS.'partials/_aside.php';

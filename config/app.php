@@ -14,3 +14,4 @@
 
     define('DB_CONFIG_FILE', CONFIG.'db.php');
     define('LOGS', ROOT.'/logs/');
+    const SESSION_PREFIX = 'shop_';

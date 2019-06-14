@@ -16,7 +16,9 @@
 		</div>
 	</footer>
 <!-- End section footer -->
-
+<?php
+require_once VIEWS.'partials/_template.php';
+?>
 <script src=/assets/js/app.js async defer></script>
 
 
