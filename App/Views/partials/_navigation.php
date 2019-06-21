@@ -1,3 +1,4 @@
+<?php use Core\Helper;?>
 <nav class="navbar">
 		<input type="checkbox" id="menu-trigger" />
 		<label class='label' for="menu-trigger">

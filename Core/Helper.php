@@ -1,5 +1,5 @@
 <?php
-
+namespace Core;
 class Helper {
 
     public static function redirect($redirect_url = '/')
@@ -13,12 +13,18 @@ class Helper {
     public static function getStatusText($status)
     {
         switch ($status) {
-        case '1':
-            return 'Отображается';
-            break;
-        case '0':
-            return 'Скрыта';
-            break;
+           case '1' :
+               return 'Новый';
+               break;
+            case '2' :
+                return 'В обработке';
+                break;
+            case '3' :
+                return 'Доставляется';
+                break;
+            case '4' :
+                return 'Закрыт';
+                break;
         }
     }
 /**

@@ -1,6 +1,11 @@
 <?php
 // HomeController.php
-require_once MODELS.'Product.php';
+namespace App\Controllers;
+
+use Core\Controller;
+use App\Models\Product;
+
+// require_once MODELS.'Product.php';
 
 class HomeController extends Controller
 {

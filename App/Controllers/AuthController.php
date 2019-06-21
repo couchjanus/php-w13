@@ -73,7 +73,7 @@ class AuthController extends Controller
             $password = $_POST['password'];
             
             // Проверяем, существует ли пользователь
-            $userId = User::checkUser($email, $password);
+            $userId = (int)User::checkUser($email, $password);
             // var_dump($userId);
             // exit();
             if ($userId == false) {
@@ -96,4 +96,27 @@ class AuthController extends Controller
         Session::destroy();
         Helper::redirect('/');
     }   
+    public function loggedCheck()
+    {
+        if (!Session::get('logged') == true) {
+            $response = array(
+                    'r' => 'fail',
+                    'url' => 'login'
+                );
+        } else {
+
+            $userId = Helper::checkLog();
+            $user = User::getById($userId);
+                        
+            $response = [
+                'phone_number' => $user['phone_number'],
+                'last_name' => $user['last_name'],
+                'first_name' => $user['first_name']
+            ];
+            
+        }
+
+        echo json_encode($response);
+        // exit;
+    }
 }
